@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Timeout Testing</title>
+    <script>
+      // document.write("Loading")
+      // setTimeout(function(){
+      //   document.write("Hello World");
+      // }, 3000);
+      document.addEventListener("DOMContentLoaded", function(event) {
+        document.open();
+        document.write("Ready..");
+        document.close();
+        setTimeout(function(){
+          document.write("Set..");
+          document.close();
+        }, 1000);
+        setTimeout(function(){
+          document.write("Go..");
+          document.close();
+        }, 2000);
+      });
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
