@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Github with Bootstrap</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+
+    <style>
+      .small-gap {
+        height: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand">
+            <img src="http://hrnug.org/Images/GitHub-Mark-32px.png">
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      <!-- Nav tabs -->
+      <ul class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active"><a href="#notifications" aria-controls="home" role="tab" data-toggle="tab"><i class="glyphicon glyphicon-inbox"></i> Notifications</a></li>
+        <li role="presentation"><a href="#watching" aria-controls="profile" role="tab" data-toggle="tab"><i class="glyphicon glyphicon-eye-open"></i> Watching</a></li>
+      </ul>
+      <div class="small-gap"></div>
+      <div class="row">
+        <div class="col-md-4">
+          <ul class="nav nav-pills nav-stacked">
+            <li class="active"><a href="javascript:void(0);">Unread</a></li>
+            <li><a href="javascript:void(0);">Participating</a></li>
+            <li><a href="javascript:void(0);">Unread Notifications</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-8">
+          <!-- Tab panes -->
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane active" id="notifications">
+              <div class="panel panel-default">
+                <div class="panel-heading">CodeCoreYVR/my-books-react</div>
+                <div class="panel-body">
+                  Hello here is an issue
+                </div>
+              </div>
+              <div class="panel panel-default">
+                <div class="panel-heading">CodeCoreYVR/january-2015-fundamentals</div>
+                <div class="panel-body">
+                  Hi There this is a notification
+                </div>
+              </div>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="watching">
+              Content for Watching
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+    </div>
+
+
+
+
+
+  </body>
+</html>
