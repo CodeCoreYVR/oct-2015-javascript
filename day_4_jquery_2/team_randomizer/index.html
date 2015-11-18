@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Team Randomizer</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+    <script src="main.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Team Randomizer</h1>
+      <form id="team-form">
+        <div class="form-group">
+          <label for="team-members" class="control-label">Team Members</label>
+          <textarea id="team-members" rows="3" cols="40" class="form-control"></textarea>
+          <p class="help-block">Names separated by commas.</p>
+        </div>
+        <div class="form-group" id="team-members-group">
+          <label for="team-count" class="control-label">Team Members Per Team</label>
+          <input type="text" id="team-count" class="form-control">
+        </div>
+        <input type="submit" class="btn btn-primary">
+      </form>
+      <div id="teams"></div>
+    </div>
+  </body>
+</html>
