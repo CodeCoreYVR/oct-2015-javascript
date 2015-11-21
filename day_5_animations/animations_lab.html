@@ -1,0 +1,115 @@
+<html>
+  <head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+    <script src="inClass.js"></script>
+
+    <style>
+      /*.moved {
+        bottom: 100px!important;
+        opacity: 0.5;
+        left: 100px!important;
+      }*/
+
+      .size {
+        width: 100px!important;
+      }
+
+      .moved {
+        left: 100px!important;
+        transform: rotate(360deg);
+      }
+
+      #rocket {
+        /*transition: opacity 1s, bottom 1s, left 5s, width 3s, transform 5s;*/
+        /*transition: bottom 0.1s,left 0.1s;*/
+        position: absolute;
+        left: 0px;
+        bottom: 0px;
+        width: 50px;
+      }
+
+      @keyframes drive {
+
+        0%   { left: 0; bottom: 0 ; transform: rotate(45deg) }
+        50%  { left: 0; bottom: 200px; transform: rotate(90deg)}
+        100% { left: 200px; bottom: 200px; transform: rotate(37.2deg)}
+      }
+
+      #rocket.animated {
+        animation: drive 5s;
+        animation-fill-mode: forwards;
+      }
+
+      ul {
+        display: block;
+        padding-left: 0;
+        list-style: none;
+        margin-right: 10px;
+        border: 1px dashed #666;
+        min-height: 100px;
+      }
+
+      li {
+        border: 2px solid #666;
+        width: 50px;
+        padding: 10px;
+        text-align: center;
+        margin-top: 5px;
+        background-color: #2980b9;
+        color: white;
+        font-size: 20px;
+        z-index: 10;
+      }
+
+      /* Your Styles Here */
+      /*img#rocket.bigger {
+        width: 1000px;
+      }
+      #rocket.bigger {
+        width: 400px;
+      }*/
+      #rocket.big {
+        width: 100px;
+      }
+
+      .red-border {
+        border-color: red;
+      }
+    </style>
+
+    <script>
+      $(document).ready(function() {
+
+        // Your Scripts Here
+
+      });
+    </script>
+
+  </head>
+
+  <body>
+
+    <ul id="list-1" class="sortable">
+      <li id="list-item-1">1</li>
+      <li id="list-item-2">2</li>
+      <li id="list-item-3">3</li>
+      <li id="list-item-4">4</li>
+    </ul>
+
+    <ul id="list-2" class="sortable">
+      <li id="list-item-5">5</li>
+      <li id="list-item-6">6</li>
+      <li id="list-item-7">7</li>
+      <li id="list-item-8">8</li>
+    </ul>
+
+    <button id='button-1'>Button 1</button>
+    <button id='button-2'>Button 2</button>
+
+    <img id="rocket" src="rocket.png"/>
+
+  </body>
+
+</html>
