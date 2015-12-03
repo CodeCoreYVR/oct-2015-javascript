@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>React.js Boxes Exercise</title>
+    <script src="react.js"></script>
+    <script src="react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.24/browser.min.js"></script>
+  </head>
+  <body>
+    <div id="container"></div>
+
+    <script type="text/babel">
+      var Box = React.createClass({
+        render: function() {
+          var styles = {width: "100px",
+                        height: "100px",
+                        float: "left",
+                        backgroundColor: this.props.backgroundColor};
+          return <div style={styles}></div>;
+        }
+      });
+
+      var BoxOfBoxes = React.createClass({
+        render: function() {
+          console.log(this.props.colors);
+          // this.props.colors -> ["red", "blue", "yellow", "cyan"]
+          // after the .map I will get an array <Box /> components
+          var counter = 0;
+          var boxes = this.props.colors.map(function(color){
+                        counter++;
+                        return <Box key={counter} backgroundColor={color} />;
+                      });
+          console.log(boxes);
+          return <div>{boxes}</div>;
+        }
+      })
+
+      ReactDOM.render(<BoxOfBoxes colors={["red", "blue", "yellow", "cyan", "black"]} />, document.getElementById('container'));
+
+    </script>
+
+  </body>
+</html>

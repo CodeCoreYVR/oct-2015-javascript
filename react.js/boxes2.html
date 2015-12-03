@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>React.js Boxes Exercise</title>
+    <script src="react.js"></script>
+    <script src="react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.24/browser.min.js"></script>
+  </head>
+  <body>
+    <div id="container"></div>
+    <div id="container-1"></div>
+    <div id="container-2"></div>
+    <div id="container-3"></div>
+    <script type="text/babel">
+      var Box = React.createClass({
+        render: function() {
+          var styles = {backgroundColor: this.props.color, width: this.props.width,
+                        height: this.props.height, float: "left", borderRadius: "4px",
+                        marginLeft: "10px"};
+          return <div style={styles}></div>
+        }
+      });
+
+      ReactDOM.render(<Box color="red" width="300px" height="200px" />, document.getElementById("container"));
+
+
+    </script>
+
+  </body>
+</html>
