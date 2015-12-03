@@ -10,10 +10,23 @@
   <body>
     <script id="question-summary" type="x-tmpl-mustache">
       <div>
-        <h2>{{id}} - {{title}}</h2>
+        <h2>
+          <a href="javascript:void(0);" class="question-title" data-id="{{id}}">
+            {{title}}
+          </a>
+        </h2>
         <hr>
       </div>
     </script>
+
+    <script id="question-details" type="x-tmpl-mustache">
+      <h1>{{title}}</h1>
+      <p>{{body}}</p>
+      <p>{{created_at}}</p>
+      <p>{{view_count}}</p>
+    </script>
+
+    <div id="single-question-details"></div>
     <div id="questions"></div>
   </body>
 </html>

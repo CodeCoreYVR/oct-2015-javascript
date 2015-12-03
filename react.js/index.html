@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>React.js Basics</title>
+    <script src="react.js"></script>
+    <script src="react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.24/browser.min.js"></script>
+  </head>
+  <body>
+    <div id="container"></div>
+    <div id="container-1"></div>
+    <script type="text/babel">
+      var HelloWorld = React.createClass({
+        render: function() {
+          // The keys can be any CSS attribute just remember to convert the
+          // css attributes with dashes in them such as: font-size into a lower
+          // camel case equivalent such as: fontSize
+          var styles = {color: "red", fontSize: "15px"};
+          return <div>
+                  <p style={styles}>Hello World</p>
+                  <p>Hello There {this.props.name}!</p>
+                 </div>;
+        }
+      });
+      ReactDOM.render(<HelloWorld name="Tam" />, document.getElementById('container'));
+      ReactDOM.render(<HelloWorld name="John" />, document.getElementById('container-1'));
+    </script>
+
+  </body>
+</html>
