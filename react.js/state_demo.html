@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>React.js State Demo</title>
+    <script src="react.js"></script>
+    <script src="react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.24/browser.min.js"></script>
+  </head>
+  <body>
+    <div id="container"></div>
+
+    <script type="text/babel">
+      var Box = React.createClass({
+        getInitialState: function(){
+          // getInitialState is a special function from React that will be
+          // called when creating the component to get the initial value
+          // of the `state` object
+          // This function must return an object.
+          return {color: this.props.initialColor};
+        },
+        componentDidMount: function() {
+          console.log("component is ready!");
+        },
+        changeColor: function() {
+          if(this.state.color === this.props.initialColor) {
+            var newState = {color: "green"};
+          } else {
+            var newState = {color: this.props.initialColor};
+          }
+          // setState is a function inherited from React which takes an object
+          // as an argument and makes the object you give it as the new state
+          // instead of the current one (for instance the one set by getInitialState)
+          this.setState(newState);
+        },
+        render: function(){
+          var styles = {width: this.props.dimension,
+                        height: this.props.dimension,
+                        backgroundColor: this.state.color}
+          return <div style={styles} onClick={this.changeColor}></div>;
+
+        }
+      });
+      ReactDOM.render(<Box initialColor="blue" dimension="200px" />, document.getElementById('container'));
+    </script>
+  </body>
+</html>

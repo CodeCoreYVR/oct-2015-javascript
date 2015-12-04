@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>React.js Timer Demo</title>
+    <script src="react.js"></script>
+    <script src="react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.24/browser.min.js"></script>
+  </head>
+  <body>
+    <div id="container"></div>
+
+    <script type="text/babel">
+      var Timer = React.createClass({
+        getInitialState: function() {
+          return {currentTime: new Date()};
+        },
+        componentDidMount: function(){
+          this.timerIntervalNumber = setInterval(this.changeTime, 1000);
+        },
+        componentWillUnmount: function() {
+          clearInterval(this.timerIntervalNumber);
+        },
+        changeTime: function() {
+          this.setState({currentTime: new Date()});
+        },
+        render: function(){
+          return <div>{this.state.currentTime.toString()}</div>;
+        }
+      });
+      ReactDOM.render(<Timer />, document.getElementById('container'));
+    </script>
+  </body>
+</html>
