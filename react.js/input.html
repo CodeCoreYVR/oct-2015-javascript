@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>React.js Forms</title>
+    <script src="react.js"></script>
+    <script src="react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.24/browser.min.js"></script>
+  </head>
+  <body>
+    <div id="container"></div>
+    <script type="text/babel">
+      var UserInput = React.createClass({
+        getInitialState: function(){
+          return {charCount: 0};
+        },
+        updateCount: function(){
+          var string = this.refs.userString.value;
+          this.setState({charCount: string.length});
+        },
+        render: function(){
+          return <div>
+                  <input type="text" ref="userString" onChange={this.updateCount} />
+                  {this.state.charCount}
+                </div>;
+        }
+      });
+      ReactDOM.render(<UserInput />, document.getElementById('container'));
+    </script>
+
+  </body>
+</html>
