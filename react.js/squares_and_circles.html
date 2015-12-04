@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Squares and Circles</title>
+    <script src="react.js"></script>
+    <script src="react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.24/browser.min.js"></script>
+  </head>
+  <body>
+    <div id="container"></div>
+    <div id="container-1"></div>
+    <script type="text/babel">
+      var Circle = React.createClass({
+        render: function() {
+          var styles = {borderRadius: "50%",
+                        width: "50px",
+                        height: "50px",
+                        float: "left",
+                        backgroundColor: this.props.color};
+          return <div style={styles}></div>;
+        }
+      });
+
+      var Square = React.createClass({
+        render: function(){
+          console.log(this.props.circleColors);
+          var styles = {width: this.props.dimesion,
+                        height: this.props.dimesion,
+                        backgroundColor: this.props.color
+                      };
+          var circles = this.props.circleColors.map(function(col){
+                          return <Circle color={col} />;
+                        });
+          return <div style={styles}>{circles}</div>;
+        }
+      });
+
+
+      ReactDOM.render(<Square dimesion="600px" color="green" circleColors={["red", "blue", "green", "white", "cyan", "purple", "pink"]} />, document.getElementById('container'));
+      ReactDOM.render(<Square dimesion="400px" color="grey" circleColors={["red", "blue", "green"]} />, document.getElementById('container-1'));
+    </script>
+
+  </body>
+</html>
