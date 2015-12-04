@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>React.js Additions</title>
+    <script src="react.js"></script>
+    <script src="react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.24/browser.min.js"></script>
+  </head>
+  <body>
+    <div id="container"></div>
+    <script type="text/babel">
+      var Add = React.createClass({
+        getInitialState: function() {
+          return {result: ""};
+        },
+        calculateResult: function() {
+          var num1 = parseInt(this.refs.number1.value);
+          var num2 = parseInt(this.refs.number2.value);
+          this.setState({result: num1 + num2})
+        },
+        render: function() {
+          return <div>
+                  <input type="text" ref="number1" />
+                  +
+                  <input type="text" ref="number2" />
+                  <button onClick={this.calculateResult}>=</button>
+                  <span>{this.state.result}</span>
+                 </div>;
+        }
+      });
+      ReactDOM.render(<Add />, document.getElementById('container'));
+    </script>
+
+  </body>
+</html>
