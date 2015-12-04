@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>React.js Products</title>
+    <script src="react.js"></script>
+    <script src="react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.24/browser.min.js"></script>
+  </head>
+  <body>
+    <div id="container"></div>
+    <script type="text/babel">
+      var Product = React.createClass({
+        getInitialState: function() {
+          return {color: "white"};
+        },
+        addProductPriceToCart: function() {
+          this.props.addPriceToCart(this.props.price);
+        },
+        render: function() {
+          var styles = {backgroundColor: this.state.color,
+                        width: "200px",
+                        border: "1px solid",
+                        textAlign: "center",
+                        height: "50px"}
+          return <div style={styles} onClick={this.addProductPriceToCart}>
+                    {this.props.name} (${this.props.price})
+                  </div>;
+        }
+      });
+      var Cart = React.createClass({
+        getInitialState: function(){
+          return {total: 0};
+        },
+        addToTotal: function(amount) {
+          this.setState({total: this.state.total + amount});
+        },
+        render: function() {
+          var mainObject = this;
+          var products = this.props.products.map(function(prod){
+                            return <Product name={prod.name}
+                                            addPriceToCart={mainObject.addToTotal}
+                                            price={prod.price} />
+                          });
+          return <div>
+                  {products}
+                  Total: ${this.state.total}
+                </div>;
+        }
+      });
+
+      ReactDOM.render(<Cart products={[{name: "TV", price: 50}, {name: "Phone", price: 150}, {name: "Table", price: 20}, {name: "Laptop", price: 500}]} />, document.getElementById('container'));
+    </script>
+
+  </body>
+</html>
