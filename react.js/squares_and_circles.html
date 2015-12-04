@@ -30,7 +30,7 @@
                         backgroundColor: this.props.color
                       };
           var circles = this.props.circleColors.map(function(col){
-                          return <Circle color={col} />;
+                          return <Circle key={col} color={col} />;
                         });
           return <div style={styles}>{circles}</div>;
         }
